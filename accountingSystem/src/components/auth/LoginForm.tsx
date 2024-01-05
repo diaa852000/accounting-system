@@ -9,7 +9,7 @@ import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined
 import IconButton from '@mui/material/IconButton';
 
 import { FormikHelpers, useFormik } from "formik"
-import { loginSchema } from "../schema/schema";
+import { loginSchema } from "../../schema/schema";
 
 type LoginCredentials = {
     username: string;

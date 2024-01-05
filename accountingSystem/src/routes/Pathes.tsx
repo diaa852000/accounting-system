@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
-import { Dashboard, Login } from "../pages"
-import Test from "../pages/Test"
-
+import { Login } from "../pages"
+import {routes} from '.'
+import MainLayout from "../components/layout/MainLayout"
 function Pathes() {
     return (
         <Routes>
@@ -9,8 +9,8 @@ function Pathes() {
             <Route path="/login" element={<Login/>}/>
             
             {/* protected  routes*/}
-            <Route path="/" element={<Dashboard/>}>
-                <Route path="test" element={<Test/>}/>
+            <Route path="/" element={<MainLayout/>}>
+                {routes}
             </Route>
         </Routes>
     )

@@ -1,7 +1,6 @@
-import bg from '../assets/login.png'
-// import logo from '../assets/logo.png'
+import bg from '../../assets/login.png'
 
-import { LoginForm } from "../components";
+import { LoginForm } from "../../components";
 
 export default function Login() {
 

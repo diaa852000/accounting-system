@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* general reset */
 * {
   margin: 0;
@@ -29,12 +30,12 @@ body {
 
 /* start layout */
 
-.dashboard{
+.main-layout{
   position: relative;
-
+  
   display: grid;
   grid-template-areas: 
-  'sidebar nav'
+  'topbar topbar'
   'sidebar main'
   ;
   grid-template-columns: 80px 1fr;
@@ -42,30 +43,36 @@ body {
   transition: all 250ms linear;
 }
 
-.dashboard.active{
+.main-layout.active{
   grid-template-columns: 250px 1fr;
+}
+
+.topbar{
+  grid-area: topbar;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 }
 
 .sidebar {
   grid-area: sidebar;
   position: sticky;
-  top: 0;
-  left: 0;
-  height: 100dvh;
-  background-color: green;
+  top: 60px;
+  height: calc(100dvh - 60px);
+  width: 100%;
+  min-width: 80px;
+  background-color: #fff;
 }
 
-.navbar{
-  grid-area: nav;
-  background-color: red;
-  position: sticky;
-  top: 0;
-}
 
 .main{
   grid-area: main;
   min-height: 200dvh;
-  background-color: blue;
+  background-color: #f6f6f8;
+  overflow-y: auto;
 }
 
 /* end layout */
