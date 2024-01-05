@@ -10,6 +10,9 @@ import IconButton from '@mui/material/IconButton';
 
 import { FormikHelpers, useFormik } from "formik"
 import { loginSchema } from "../../schema/schema";
+import { login } from "../../sevices/authService";
+import { useDispatch } from "react-redux";
+
 
 type LoginCredentials = {
     username: string;
@@ -21,12 +24,17 @@ const initialValues: LoginCredentials = {
     password: ""
 };
 
-const onSubmit = (values: LoginCredentials, actions: FormikHelpers<LoginCredentials>) => {
-    actions.resetForm();
-}
+
 
 function LoginForm() {
+    const dispatch = useDispatch();
     const [showPassword, setShowPassword] = useState(false);
+    
+    const onSubmit = (values: LoginCredentials, actions: FormikHelpers<LoginCredentials>) => {
+        actions.resetForm();
+        login(values.username, values.password, dispatch);
+    
+    }
 
     const handleTogglePassword = () => setShowPassword(prev => !prev);
 

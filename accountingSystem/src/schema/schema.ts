@@ -14,7 +14,7 @@ export const loginSchema = yup.object().shape({
     .required("Please enter your name"),
     password: yup
     .string()
-    .min(8)
-    .matches(pwdRgex, {"message" : pwdMsg})
+    .min(3)
+    // .matches(pwdRgex, {"message" : pwdMsg})
     .required("Please enter your password")
 });
